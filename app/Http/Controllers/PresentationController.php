@@ -28,7 +28,7 @@ class PresentationController extends Controller
         /**
      * Display a listing of the resource by parent.
      */
-    public function getOnlyOneByPresentation(Request $request): Collection
+    public function showOnlyOneByPresentation(Request $request): Collection
     {
         return Presentation::select(
             DB::raw("* ,presentation_deploy(presentations.id) as packing_deployed")
@@ -40,7 +40,7 @@ class PresentationController extends Controller
     /**
      * Display a listing of the resource by parent.
      */
-    public function getAllByProduct(Request $request): Collection
+    public function showAllByProduct(Request $request): Collection
     {
         return Presentation::select(
             DB::raw("* ,presentation_deploy(presentations.id) as packing_deployed")
