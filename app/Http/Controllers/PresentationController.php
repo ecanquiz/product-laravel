@@ -24,6 +24,19 @@ use Illuminate\Support\Facades\Storage;
 
 class PresentationController extends Controller
 {
+
+        /**
+     * Display a listing of the resource by parent.
+     */
+    public function getOnlyOneByPresentation(Request $request): Collection
+    {
+        return Presentation::select(
+            DB::raw("* ,presentation_deploy(presentations.id) as packing_deployed")
+        )
+        ->where("id", $request->presentationId)
+        ->get();
+    }
+
     /**
      * Display a listing of the resource by parent.
      */

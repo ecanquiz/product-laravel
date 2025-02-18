@@ -87,7 +87,8 @@ Route::prefix('products')->group(function () {
 
 Route::get('/presentation-search', [PresentationController::class,'search']);
 Route::prefix('presentations')->group(function () {
-  Route::get('/{productId}', [PresentationController::class, 'getAllByProduct']);
+  Route::get('/{presentationId}/show-only-one', [PresentationController::class, 'getOnlyOneByPresentation']);
+  Route::get('/{productId}/show-all', [PresentationController::class, 'getAllByProduct']);
   Route::get('/{presentation}', [PresentationController::class, 'show']);
   Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/', [PresentationController::class, 'store']);
