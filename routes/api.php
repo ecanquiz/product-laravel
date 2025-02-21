@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Middleware\ValidateSharedToken;
 use App\Http\Controllers\{
     AuthController,
     AuthMenuController,
@@ -20,7 +20,6 @@ use App\Http\Controllers\{
 /*Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');*/
-
 
 Route::post('/sanctum/token', TokenController::class);
 Route::middleware(['auth:sanctum'])->group(function () {
@@ -54,48 +53,47 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::put('/{role}', [RoleController::class, 'update']);
         Route::delete('/{id}', [RoleController::class,'destroy']);        
     });
-});
 
-Route::prefix('category')->group(function () {
-    Route::get('/get/{type}/{value?}', [CategoryController::class, 'get']);
-    Route::middleware(['auth:sanctum'])->group(function () {
+    Route::prefix('category')->group(function () {
+        Route::get('/get/{type}/{value?}', [CategoryController::class, 'get']);        
         Route::post('/regist', [CategoryController::class, 'regist']);
-        Route::delete('/remove/{id}', [CategoryController::class, 'destroy']);
+        Route::delete('/remove/{id}', [CategoryController::class, 'destroy']);    
     });
+    
+    Route::prefix('marks')->group(function () {
+        Route::get('/', [MarkController::class, 'index']);
+        Route::get('/list', [MarkController::class, 'list']);
+        Route::get('/{mark}', [MarkController::class, 'show']);
+        Route::post('/', [MarkController::class, 'store']);
+        Route::put('/{mark}', [MarkController::class, 'update']);
+        Route::delete('/{id}', [MarkController::class,'destroy']);
+    });
+
+    Route::prefix('products')->group(function () {
+        Route::get('/', [ProductController::class, 'index']);  
+        Route::get('/{product}', [ProductController::class, 'show']);
+        Route::middleware(['auth:sanctum'])->group(function () {
+          Route::post('/', [ProductController::class, 'store']);
+          Route::put('/{product}', [ProductController::class, 'update']);
+          Route::delete('/{id}', [ProductController::class,'destroy']);
+        });
+    });
+      
+    Route::prefix('presentations')->group(function () {
+        Route::get('/{productId}/all', [PresentationController::class, 'showAllByProduct']);
+        Route::middleware(['auth:sanctum'])->group(function () {
+          Route::post('/', [PresentationController::class, 'store']);
+          Route::put('/{presentation}', [PresentationController::class, 'update']);
+          Route::delete('/{id}', [PresentationController::class,'destroy']);
+        });
+    });
+    Route::post('/presentation-fileupload/{presentation}', [PresentationController::class,'fileUpload']);    
 });
 
-Route::prefix('marks')->group(function () {
-  Route::get('/', [MarkController::class, 'index']);
-  Route::get('/list', [MarkController::class, 'list']);
-  Route::get('/{mark}', [MarkController::class, 'show']);
-  Route::middleware(['auth:sanctum'])->group(function () {
-    Route::post('/', [MarkController::class, 'store']);
-    Route::put('/{mark}', [MarkController::class, 'update']);
-    Route::delete('/{id}', [MarkController::class,'destroy']);
-  });
+Route::middleware([ValidateSharedToken::class])->group(function () {
+    Route::get('/presentation-search', [PresentationController::class,'search']);
+    Route::get('presentations/{presentationId}/only-one', [PresentationController::class, 'showOnlyOneByPresentation']);
 });
-
-Route::prefix('products')->group(function () {
-  Route::get('/', [ProductController::class, 'index']);  
-  Route::get('/{product}', [ProductController::class, 'show']);
-  Route::middleware(['auth:sanctum'])->group(function () {
-    Route::post('/', [ProductController::class, 'store']);
-    Route::put('/{product}', [ProductController::class, 'update']);
-    Route::delete('/{id}', [ProductController::class,'destroy']);
-  });
-});
-
-Route::get('/presentation-search', [PresentationController::class,'search']);
-Route::prefix('presentations')->group(function () {
-  Route::get('/{presentationId}/only-one', [PresentationController::class, 'showOnlyOneByPresentation']);
-  Route::get('/{productId}/all', [PresentationController::class, 'showAllByProduct']);
-  Route::middleware(['auth:sanctum'])->group(function () {
-    Route::post('/', [PresentationController::class, 'store']);
-    Route::put('/{presentation}', [PresentationController::class, 'update']);
-    Route::delete('/{id}', [PresentationController::class,'destroy']);
-  });
-});
-Route::post('/presentation-fileupload/{presentation}', [PresentationController::class,'fileUpload']);  
 
 Route::prefix('error')->group(function () {
     Route::get('/not-auth', function(){        
