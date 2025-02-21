@@ -16,7 +16,7 @@ use App\Http\Requests\Mark\{
     UpdateMarkRequest
     
 };
-use Modules\Product\Http\Resources\MarkResource;
+use App\Http\Resources\MarkResource;
 
 class MarkController extends Controller
 {
