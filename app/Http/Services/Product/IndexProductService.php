@@ -8,6 +8,7 @@ namespace App\Http\Services\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 
 class IndexProductService
 {
@@ -31,12 +32,14 @@ class IndexProductService
             ->join("marks", "marks.id", "=", "products.mark_id");
 
         // search 
-        $search = $request->input("search");
+        $search = strtoupper($request->input("search"));
+
         if ($search) {
             $query->where(function ($query) use ($search) {
                 $query
-                    ->where("products.name", "like", "%$search%");
-                    //->orWhere("email", "like", "%$search%");
+                    ->where(DB::raw('upper(products.name)'), "like", "%$search%")
+                    ->orWhere(DB::raw('upper(marks.name)'), "like", "%$search%")
+                    ->orWhere(DB::raw('upper(view_categories.family)'), "like", "%$search%");
             });
         }
 
