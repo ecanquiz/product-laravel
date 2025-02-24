@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('company_id')->default(1);
-            $table->string('name',50);            
+            $table->string('name',100);            
             $table->integer('category_id')->nullable()->unsigned();//unsignedInteger //(Laravel 7.x) ->nullable()->constrained();            
             $table->integer('mark_id')->nullable()->unsigned();//unsignedInteger //(Laravel 7.x) ->nullable()->constrained();
             $table->integer('measure_unit_type_id');
@@ -31,7 +31,7 @@ class CreateProductsTable extends Migration
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('mark_id')->references('id')->on('marks');
-            $table->unique(['company_id', 'name']);
+            $table->unique(['company_id', 'name', 'mark_id']);
             $table->softDeletes();
         });
     }

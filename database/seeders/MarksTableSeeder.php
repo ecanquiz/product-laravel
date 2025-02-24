@@ -15,12 +15,16 @@ class MarksTableSeeder extends Seeder
      */
     public function run()
     {
-        Mark::create(['name' => 'N/A'     ]);
-        Mark::create(['name' => 'JUANA'   ]);
-        Mark::create(['name' => 'LA LUCHA']);
-        Mark::create(['name' => 'PANTERA' ]);
-        Mark::create(['name' => 'PAN'     ]);
+        Mark::create(['name' => 'N/A']);
+        Mark::create(['name' => 'MONTANA']);
+        Mark::create(['name' => 'MANPICA']);
+        Mark::create(['name' => 'PROTEX']);
+        Mark::create(['name' => 'REXONA']);
+        Mark::create(['name' => 'EVERY NIGHT']);
+        Mark::create(['name' => 'PANTENE']);
+        Mark::create(['name' => 'LAVANSAN']);
+        Mark::create(['name' => 'LAS LLAVES']);
+
     }
 
 }
-

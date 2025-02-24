@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class,
             MenuSeeder::class,
-            CategoriesTableSeeder::class,
             MarksTableSeeder::class,
+            CategoriesTableSeeder::class,
             ProductsTableSeeder::class,
             PresentationsTableSeeder::class
         ]);
