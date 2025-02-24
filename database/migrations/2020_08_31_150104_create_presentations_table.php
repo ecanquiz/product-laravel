@@ -19,7 +19,7 @@ class CreatePresentationsTable extends Migration
             $table->integer('company_id')->default(1);
             $table->integer('product_id')->nullable()->unsigned();//unsignedInteger //(Laravel 7.x) ->nullable()->constrained();                        
             $table->jsonb('packing');            
-            $table->string('bar_cod', 15);
+            $table->string('bar_cod', 15)->default('N/A');
             //$table->string('int_cod', 15);            
             $table->float('price')->default(100);
             //$table->integer('stock_min')->default(5);

@@ -16,108 +16,81 @@ class PresentationsTableSeeder extends Seeder
     public function run()
     {
 
-        Presentation::create([
-            'product_id' => 1,
-            'packing' => '[{"packing": "PAQUETE(S)", "quantity": 1}, {"packing": "PACA(S)", "quantity": 24}]',
-            'bar_cod' => 'A1A1A1A1',
-            //'int_cod' => '1A1A1A1A',
-            'price' => 100.2,
-            //'sale_type' => true
-        ]);
+        $presentations = [
+            ['product_id' => 1 , 'packing' => '[{"packing": "CUÑETE(S)", "quantity":     18.92}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 1 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      3.78}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 1 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      1.89}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 1 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      0.94}]', 'bar_cod' => 'N/A', 'price' => 1],
 
-        Presentation::create([
-            'product_id' => 2,
-            'packing' => '[{"packing": "PAQUETE(S)", "quantity": 1}, {"packing": "PACA(S)", "quantity": 24}]',
-            'bar_cod' => 'B2B2B2B2',
-            //'int_cod' => '2B2B2B2B',
-            'price' => 300.5,
-            //'sale_type' => true
-        ]);
+            ['product_id' => 2 , 'packing' => '[{"packing": "CUÑETE(S)", "quantity":     18.92}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 2 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      3.78}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 2 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      1.89}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 2 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      0.94}]', 'bar_cod' => 'N/A', 'price' => 1],
 
-        Presentation::create([
-            'product_id' => 3,
-            'packing' => '[{"packing": "PAQUETE(S)", "quantity": 1}, {"packing": "SACO(S)", "quantity": 12}]',
-            'bar_cod' => 'C3C3C3C3',
-            //'int_cod' => '3C3C3C3C',
-            'price' => 0.5,
-            //'sale_type' => true
-        ]);
+            ['product_id' => 3 , 'packing' => '[{"packing": "CUÑETE(S)", "quantity":     18.92}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 3 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      3.78}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 3 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      1.89}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 3 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      0.94}]', 'bar_cod' => 'N/A', 'price' => 1],
 
-        Presentation::create([
-            'product_id' => 3,
-            'packing' => '[{"packing": "BULTO(S)", "quantity": 4}, {"packing": "CARTUCHO(S)", "quantity": 54}, {"packing": "BOTELLA(S)", "quantity": 44}, {"packing": "BOMBONA(S)", "quantity": 44}, {"packing": "PAQUETE(S)", "quantity": 0.5}, {"packing": "SACO(S)", "quantity": 24}]',
-            'bar_cod' => 'D4D4D4D4',
-            //'int_cod' => 'D4D4D4D4',
-            'price' => 1400.7,
-            //'sale_type' => true
-        ]);
+            ['product_id' => 4 , 'packing' => '[{"packing": "CUÑETE(S)", "quantity":     18.92}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 4 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      3.78}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 4 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      1.89}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 4 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      0.94}]', 'bar_cod' => 'N/A', 'price' => 1],
 
-        Presentation::create([
-            'product_id' => 3,
-            'packing' => '[{"packing": "PAQUETE(S)", "quantity": 0.25}, {"packing": "SACO(S)", "quantity": 48}]',
-            'bar_cod' => 'E5E5E5E5',
-            //'int_cod' => '5E5E5E5E',
-            'price' => 150,
-            //'sale_type' => true
-        ]);
+            ['product_id' => 5 , 'packing' => '[{"packing": "CUÑETE(S)", "quantity":     18.92}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 5 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      3.78}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 5 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      1.89}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 5 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      0.94}]', 'bar_cod' => 'N/A', 'price' => 1],
 
-        Presentation::create([
-            'product_id' => 4,
-            'packing' => '[{"packing": "PAQUETE(S)", "quantity": 1}, {"packing": "BULTO(S)", "quantity": 12}]',
-            'bar_cod' => '5K5KI5K5K',
-            //'int_cod' => 'K5K5K5K5',
-            'price' => 5,
-            //'sale_type' => true
-        ]);
+            ['product_id' => 6 , 'packing' => '[{"packing": "CUÑETE(S)", "quantity":     18.92}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 6 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      3.78}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 6 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      1.89}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 6 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      0.94}]', 'bar_cod' => 'N/A', 'price' => 1],
 
-        Presentation::create([
-            'product_id' => 5,
-            'packing' => '[{"packing": "PAQUETE(S)", "quantity": 1}, {"packing": "BULTO(S)", "quantity": 12}]',
-            'bar_cod' => 'K3K3K3K3',
-            //'int_cod' => '3K3K3K3K',
-            //'sale_type' => true
-        ]);
+            ['product_id' => 7 , 'packing' => '[{"packing": "CUÑETE(S)", "quantity":     18.92}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 7 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      3.78}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 7 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      1.89}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 7 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      0.94}]', 'bar_cod' => 'N/A', 'price' => 1],
 
-        Presentation::create([
-            'product_id' => 5,
-            'packing' => '[{"packing": "PAQUETE(S)", "quantity": 0.5}, {"packing": "BULTO(S)", "quantity": 24}]',
-            'bar_cod' => 'O0O0O0O0',
-            //'int_cod' => '0O0O0O0O',
-            //'sale_type' => true
-        ]);
+            ['product_id' => 8 , 'packing' => '[{"packing": "CUÑETE(S)", "quantity":     18.92}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 8 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      3.78}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 8 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      1.89}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 8 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      0.94}]', 'bar_cod' => 'N/A', 'price' => 1],
 
-        Presentation::create([
-            'product_id' => 4,
-            'packing' => '[{"packing": "PAPELETA(S)", "quantity": 0.5}, {"packing": "BULTO(S)", "quantity": 24}]',
-            'bar_cod' => 'K1K1K1K1',
-            //'int_cod' => '1K1K1K1K',
-            //'sale_type' => true
-        ]);
+            ['product_id' => 9 , 'packing' => '[{"packing": "CUÑETE(S)", "quantity":     18.92}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 9 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      3.78}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 9 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      1.89}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 9 , 'packing' => '[{"packing": "GALON(ES)", "quantity":      0.94}]', 'bar_cod' => 'N/A', 'price' => 1],
 
-        Presentation::create([
-            'product_id' => 6,
-            'packing' => '[{"packing": "BULTO(S)", "quantity": 1}, {"packing": "PAQUETE(S)", "quantity": 1}, {"packing": "BULTO(S)", "quantity": 12}]',
-            'bar_cod' => 'Q3Q3Q3Q3',
-            //'int_cod' => '3Q3Q3Q3Q',
-            //'sale_type' => true
-        ]);
+            ['product_id' => 10 , 'packing' => '[{"packing": "PAQUETE(S)", "quantity":       110}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 11 , 'packing' => '[{"packing": "PAQUETE(S)", "quantity":       110}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 12 , 'packing' => '[{"packing": "PAQUETE(S)", "quantity":       110}]', 'bar_cod' => 'N/A', 'price' => 1],
 
-        Presentation::create([
-            'product_id' => 6,
-            'packing' => '[{"packing": "PAQUETE(S)", "quantity": 0.5}, {"packing": "BULTO(S)", "quantity": 24}]',
-            'bar_cod' => 'B8B8B8B8',
-            //'int_cod' => '8B8B8B8B',
-            //'sale_type' => true
-        ]);
+            ['product_id' => 13 , 'packing' => '[{"packing": "POTE(S)", "quantity":        90}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 14 , 'packing' => '[{"packing": "POTE(S)", "quantity":        90}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 15 , 'packing' => '[{"packing": "POTE(S)", "quantity":        90}]', 'bar_cod' => 'N/A', 'price' => 1],
 
-        Presentation::create([
-            'product_id' => 2,
-            'packing' => '[{"packing": "PAQUETE(S)", "quantity": 0.5}, {"packing": "PACA(S)", "quantity": 48}]',
-            'bar_cod' => 'H1H1H1H1',
-            //'int_cod' => '1H1H1H1H',
-            //'sale_type' => true
-        ]);
+            ['product_id' => 16 , 'packing' => '[{"packing": "POTE(S)", "quantity":       200}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 17 , 'packing' => '[{"packing": "POTE(S)", "quantity":       200}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 18 , 'packing' => '[{"packing": "POTE(S)", "quantity":       200}]', 'bar_cod' => 'N/A', 'price' => 1],
 
+            ['product_id' => 19 , 'packing' => '[{"packing": "FRASCO(S)", "quantity":         1}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 20 , 'packing' => '[{"packing": "FRASCO(S)", "quantity":         1}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 21 , 'packing' => '[{"packing": "FRASCO(S)", "quantity":         1}]', 'bar_cod' => 'N/A', 'price' => 1],
+
+            ['product_id' => 22 , 'packing' => '[{"packing": "FRASCO(S)", "quantity":         1}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 23 , 'packing' => '[{"packing": "FRASCO(S)", "quantity":         1}]', 'bar_cod' => 'N/A', 'price' => 1],
+            ['product_id' => 24 , 'packing' => '[{"packing": "FRASCO(S)", "quantity":         1}]', 'bar_cod' => 'N/A', 'price' => 1]
+        ];
+
+        
+        foreach ($presentations as $presentation) {
+            Presentation::create([
+                'product_id' => $presentation['product_id'],
+                'packing' => $presentation['packing'],
+                'bar_cod' => $presentation['bar_cod'],
+                'price' => $presentation['price'],
+            ]);
+        }
     }
-
 }
