@@ -108,7 +108,6 @@ class PresentationController extends Controller
                 DB::raw("
                     presentations.id,
                     presentations.bar_cod,                
-                    presentations.price,
                     presentations.status,
                     presentations.photo_path,
                     presentation_deploy(presentations.id) as packing_deployed,                    
