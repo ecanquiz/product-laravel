@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 use App\Models\{
     Product,
@@ -25,22 +24,32 @@ use Illuminate\Support\Facades\Storage;
 class PresentationController extends Controller
 {
 
-        /**
+     /**
      * Display a listing of the resource by parent.
      */
-    public function showOnlyOneByPresentation(Request $request): Collection
+    public function showOnlyOneByPresentation(Request $request): \Illuminate\Support\Collection
     {
-        return Presentation::select(
-            DB::raw("* ,presentation_deploy(presentations.id) as packing_deployed")
-        )
-        ->where("id", $request->presentationId)
-        ->get();
+        return DB::table('presentations')
+            ->select(
+                'bar_cod',
+                'family as category',
+                'marks.name as mark',
+                'products.name as product',
+                DB::raw("presentation_deploy(presentations.id) as packing_deployed"),
+                'photo_path'
+            )
+            ->join("products", "products.id", "=", "product_id")
+            ->join("view_categories", "view_categories.id", "=", "products.category_id")
+            ->join("marks", "marks.id", "=", "products.mark_id")
+
+            ->where("presentations.id", $request->presentationId)
+            ->get();
     }
 
     /**
      * Display a listing of the resource by parent.
      */
-    public function showAllByProduct(Request $request): Collection
+    public function showAllByProduct(Request $request): \Illuminate\Database\Eloquent\Collection
     {
         return Presentation::select(
             DB::raw("* ,presentation_deploy(presentations.id) as packing_deployed")
@@ -48,6 +57,8 @@ class PresentationController extends Controller
         ->where("product_id", $request->productId)
         ->get();
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -103,21 +114,19 @@ class PresentationController extends Controller
     public function search(Request $request): JsonResponse
     {
         // Initialize query
-        $query = Presentation::query()
-            ->select(           
-                DB::raw("
-                    presentations.id,
-                    presentations.bar_cod,                
-                    presentations.status,
-                    presentations.photo_path,
-                    presentation_deploy(presentations.id) as packing_deployed,                    
-                    products.name as product_name,
-                    categories.name as category_name,
-                    marks.name as mark_name
-                ")
+        $query = DB::table('presentations')
+            ->select(
+                'presentations.id',
+                'presentations.bar_cod',                
+                'presentations.status',
+                'presentations.photo_path',
+                'products.name as product',
+                'view_categories.family as category',
+                'marks.name as mark',
+                DB::raw("presentation_deploy(presentations.id) as packing_deployed")
             )
             ->join("products"  , "products.id"  , "=", "presentations.product_id")
-            ->join("categories", "categories.id", "=", "products.category_id")
+            ->join("view_categories", "view_categories.id", "=", "products.category_id")
             ->join("marks", "marks.id", "=", "products.mark_id");
             
         // search 
@@ -127,7 +136,7 @@ class PresentationController extends Controller
                 $query
                     ->where  (DB::raw("UPPER(bar_cod)"        ), "like", "%$search%")
                     ->orWhere(DB::raw("UPPER(products.name)"  ), "like", "%$search%")
-                    ->orWhere(DB::raw("UPPER(categories.name)"), "like", "%$search%")
+                    ->orWhere(DB::raw("UPPER(view_categories.family)"), "like", "%$search%")
                     ->orWhere(DB::raw("UPPER(marks.name)"     ), "like", "%$search%");
             });
         }
