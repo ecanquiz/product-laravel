@@ -80,7 +80,15 @@ class PresentationsTableSeeder extends Seeder
 
             ['product_id' => 22 , 'packing' => '[{"packing": "FRASCO(S)", "quantity":         1}]', 'bar_cod' => 'N/A'],
             ['product_id' => 23 , 'packing' => '[{"packing": "FRASCO(S)", "quantity":         1}]', 'bar_cod' => 'N/A'],
-            ['product_id' => 24 , 'packing' => '[{"packing": "FRASCO(S)", "quantity":         1}]', 'bar_cod' => 'N/A']
+            ['product_id' => 24 , 'packing' => '[{"packing": "FRASCO(S)", "quantity":         1}]', 'bar_cod' => 'N/A'],
+
+            ['product_id' => 25 , 'packing' => '[{"packing": "", "quantity":         1}]', 'bar_cod' => 'N/A'],
+            ['product_id' => 26 , 'packing' => '[{"packing": "", "quantity":         1}]', 'bar_cod' => 'N/A'],
+            ['product_id' => 27 , 'packing' => '[{"packing": "", "quantity":         1}]', 'bar_cod' => 'N/A'],
+
+            ['product_id' => 28 , 'packing' => '[{"packing": "", "quantity":         1}]', 'bar_cod' => 'N/A'],
+            ['product_id' => 29 , 'packing' => '[{"packing": "", "quantity":         1}]', 'bar_cod' => 'N/A'],
+            ['product_id' => 30 , 'packing' => '[{"packing": "", "quantity":         1}]', 'bar_cod' => 'N/A']
         ];
 
         
