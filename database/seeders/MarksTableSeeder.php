@@ -24,7 +24,10 @@ class MarksTableSeeder extends Seeder
         Mark::create(['name' => 'PANTENE']);
         Mark::create(['name' => 'LAVANSAN']);
         Mark::create(['name' => 'LAS LLAVES']);
-
+        Mark::create(['name' => 'CHANNELLOCK']);
+        Mark::create(['name' => 'STANLEY']);
+        Mark::create(['name' => 'GEDORE']);
+        Mark::create(['name' => 'BOSCH']);
     }
 
 }

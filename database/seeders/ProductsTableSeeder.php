@@ -49,6 +49,15 @@ class ProductsTableSeeder extends Seeder
             ['name' => 'DESINFECTANTE', 'category_id' => 12, 'mark_id' => 8, 'measure_unit_type_id' => 3, 'measure_unit_id' => 26, 'measure_unit' => 'Litro(s)'],
             ['name' => 'DESINFECTANTE', 'category_id' => 12, 'mark_id' => 9, 'measure_unit_type_id' => 3, 'measure_unit_id' => 26, 'measure_unit' => 'Litro(s)'],
 
+            ['name' => 'ALICATE', 'category_id' => 5, 'mark_id' => 10, 'measure_unit_type_id' => 7, 'measure_unit_id' => 48, 'measure_unit' => 'Unidad(es)'],
+            ['name' => 'ALICATE', 'category_id' => 5, 'mark_id' => 11, 'measure_unit_type_id' => 7, 'measure_unit_id' => 48, 'measure_unit' => 'Unidad(es)'],
+            ['name' => 'ALICATE', 'category_id' => 5, 'mark_id' => 1, 'measure_unit_type_id' => 7, 'measure_unit_id' => 48, 'measure_unit' => 'Unidad(es)'],
+
+            ['name' => 'DESTORNILLADOR', 'category_id' => 5, 'mark_id' => 12, 'measure_unit_type_id' => 7, 'measure_unit_id' => 48, 'measure_unit' => 'Unidad(es)'],
+            ['name' => 'DESTORNILLADOR', 'category_id' => 5, 'mark_id' => 13, 'measure_unit_type_id' => 7, 'measure_unit_id' => 48, 'measure_unit' => 'Unidad(es)'],
+            ['name' => 'DESTORNILLADOR', 'category_id' => 5, 'mark_id' => 1, 'measure_unit_type_id' => 7, 'measure_unit_id' => 48, 'measure_unit' => 'Unidad(es)'],
+
+
         ];
 
         foreach ($products as $product) {
