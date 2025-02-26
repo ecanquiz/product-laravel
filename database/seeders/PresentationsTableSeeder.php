@@ -88,8 +88,7 @@ class PresentationsTableSeeder extends Seeder
             Presentation::create([
                 'product_id' => $presentation['product_id'],
                 'packing' => $presentation['packing'],
-                'bar_cod' => $presentation['bar_cod'],
-                'price' => $presentation['price'],
+                'bar_cod' => $presentation['bar_cod']
             ]);
         }
     }
