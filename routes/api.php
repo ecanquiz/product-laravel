@@ -112,3 +112,13 @@ Route::prefix('error')->group(function () {
     });*/
 });
 
+
+Route::get('/public-file/{path}', function ($path) {    
+    $filePath = storage_path('app/public/' . $path);
+    
+    if (!file_exists($filePath)) {
+        abort(404);
+    }
+
+    return response()->file($filePath);
+})->where('path', '.*');
